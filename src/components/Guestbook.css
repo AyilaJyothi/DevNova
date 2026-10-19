@@ -1,0 +1,336 @@
+.guestbook-section {
+  padding: 6rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.guestbook-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3.5rem;
+}
+
+.guestbook-subtitle {
+  margin-top: 0.75rem;
+  opacity: 0.8;
+}
+
+.guestbook-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .guestbook-container {
+    grid-template-columns: 340px 1fr;
+  }
+}
+
+.guestbook-form-card {
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(163, 64, 99, 0.25);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+.form-card-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.guestbook-input,
+.guestbook-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(163, 64, 99, 0.3);
+  font-family: inherit;
+  font-size: 0.9rem;
+  background-color: transparent;
+  color: inherit;
+  outline: none;
+  margin-bottom: 1rem;
+}
+
+.guestbook-input:focus,
+.guestbook-textarea:focus {
+  border-color: #a34063;
+  box-shadow: 0 0 0 2px rgba(163, 64, 99, 0.25);
+}
+
+.guestbook-submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  border: none;
+  background: linear-gradient(90deg, #a34063, #8a2f50);
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform 0.1s;
+}
+
+.guestbook-submit-btn:hover {
+  transform: scale(1.02);
+}
+
+.guestbook-grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.guestbook-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+}
+
+@media (max-width: 860px) {
+  .guestbook-compact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 580px) {
+  .guestbook-compact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.guestbook-mini-card {
+  width: 100%;
+  min-width: 0;
+  height: 155px;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(163, 64, 99, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+}
+
+.guestbook-mini-card:hover {
+  transform: translateY(-4px);
+  border-color: #a34063;
+  box-shadow: 0 10px 20px rgba(163, 64, 99, 0.18);
+}
+
+.mini-card-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: rgba(163, 64, 99, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mini-card-author {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #a34063;
+  margin: 0.35rem 0 0.15rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 100%;
+}
+
+.mini-card-time {
+  font-size: 11px;
+  font-family: monospace;
+  opacity: 0.6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.mini-card-click-hint {
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffd166;
+  letter-spacing: 0.05em;
+  margin-top: auto;
+}
+
+.guestbook-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.pagination-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(163, 64, 99, 0.3);
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #a34063;
+  color: #ffffff;
+  border-color: #a34063;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.note-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+.note-modal-card {
+  max-width: 480px;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  border: 2px solid #a34063;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  animation: modalCardPop 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalCardPop {
+  0% { transform: scale(0.92); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.note-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(163, 64, 99, 0.15);
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.note-modal-close:hover {
+  background: rgba(163, 64, 99, 0.35);
+}
+
+.note-modal-header {
+  margin-bottom: 1.25rem;
+}
+
+.note-modal-badge {
+  display: inline-block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #ffd166;
+  margin-bottom: 0.25rem;
+}
+
+.note-modal-author {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #a34063;
+  margin: 0;
+  word-break: break-word;
+}
+
+.note-modal-time {
+  font-size: 12px;
+  font-family: monospace;
+  opacity: 0.6;
+}
+
+.note-modal-body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  padding: 1.25rem;
+  background: rgba(163, 64, 99, 0.08);
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+
+.note-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(163, 64, 99, 0.2);
+  padding-top: 1rem;
+}
+
+.note-modal-status {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.btn-heart-reaction {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #a34063;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+}
+
+.btn-heart-reaction:hover {
+  transform: scale(1.15);
+}

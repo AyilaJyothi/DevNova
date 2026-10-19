@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400&family=Quicksand:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fredoka', 'Quicksand', sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.7s ease, color 0.7s ease;
+}
+
+.theme-midnight {
+  background-color: #181224;
+  color: #fff8f1;
+}
+
+.theme-day {
+  background-color: #fff8f1;
+  color: #5c4033;
+}
+
+.font-serif-dream {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-bubbly {
+  font-family: 'Fredoka', 'Quicksand', cursive, sans-serif;
+}
+
+/* Base Ambient */
+.bg-ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.6;
+}
+
+.star-point {
+  position: absolute;
+  border-radius: 50%;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.nebula-glow {
+  position: absolute;
+  border-radius: 50%;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1.5deg); }
+}
+
+/* =========================================
+   POINTS 2, 3, 4: RESPONSIVE CHAOS MODE
+   ========================================= */
+
+/* Top Interactive Announcement Banner */
+.chaos-banner-strip {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, #ff0077, #7928ca, #ff0077);
+  background-size: 200% auto;
+  animation: rainbowScroll 3s linear infinite;
+  color: #ffffff;
+  padding: 0.4rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  box-shadow: 0 4px 15px rgba(255, 0, 119, 0.4);
+}
+
+.btn-calm-down {
+  background-color: #ffffff;
+  color: #ff0077;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.btn-calm-down:hover {
+  transform: scale(1.08);
+}
+
+@keyframes rainbowScroll {
+  to { background-position: 200% center; }
+}
+
+/* Point 2: Bouncing and Wobbling Character & Lanterns */
+.chaos-mode-active .pip-frame {
+  animation: chaosPipWiggle 1.4s ease-in-out infinite alternate !important;
+}
+
+.chaos-mode-active .lantern-card {
+  animation: chaosLanternJiggle 2s ease-in-out infinite alternate !important;
+}
+
+.chaos-mode-active .bg-ambient {
+  opacity: 0.9;
+  filter: hue-rotate(90deg);
+}
+
+@keyframes chaosPipWiggle {
+  0% { transform: scale(0.96) rotate(-3.5deg) translateY(0); }
+  50% { transform: scale(1.04) rotate(4deg) translateY(-8px); }
+  100% { transform: scale(0.98) rotate(-2deg) translateY(4px); }
+}
+
+@keyframes chaosLanternJiggle {
+  0% { transform: rotate(-2.5deg); }
+  50% { transform: rotate(3deg) scale(1.02); }
+  100% { transform: rotate(-1.5deg); }
+}
+
+/* Point 2: Psychedelic Rainbow Headings */
+.chaos-mode-active .hero-headline,
+.chaos-mode-active .section-title {
+  background: linear-gradient(90deg, #ff0077, #f59e0b, #10b981, #06b6d4, #ff0077);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: chaosRainbowText 4s ease infinite;
+}
+
+@keyframes chaosRainbowText {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Point 2: Dramatic Button Reactions (Expand, Pop & Wiggle on Hover) */
+.chaos-mode-active button:hover,
+.chaos-mode-active a.btn-primary-dream:hover,
+.chaos-mode-active a.btn-secondary-meet:hover {
+  transform: scale(1.15) rotate(3deg) !important;
+  box-shadow: 0 10px 25px rgba(255, 0, 119, 0.45) !important;
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+/* Point 4: Odometer Overdrive Glow */
+.chaos-mode-active .odometer-dial {
+  background-color: #000000 !important;
+  color: #ff0077 !important;
+  border-color: #ff0077 !important;
+  box-shadow: 0 0 15px rgba(255, 0, 119, 0.8) !important;
+  animation: odometerPulse 0.5s infinite alternate;
+}
+
+@keyframes odometerPulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}

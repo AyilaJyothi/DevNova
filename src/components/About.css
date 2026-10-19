@@ -1,0 +1,75 @@
+.about-section {
+  padding: 5rem 1.5rem;
+  transition: background-color 0.5s ease;
+}
+
+.about-section.night {
+  background-color: #1e162e;
+}
+
+.about-section.day {
+  background-color: #fff1e6;
+}
+
+.about-container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a34063;
+  display: block;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-top: 0.3rem;
+}
+
+.about-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .about-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.about-card {
+  padding: 1.75rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(163, 64, 99, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.about-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.about-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-size: 0.88rem;
+}
